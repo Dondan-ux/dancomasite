@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dancoma - Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=Aaa2aOsvjVu45A7CHrB23gWvcnRqakk08-gg3TQFojS6iO8yDqmGAh2XQbmE7hhKs-ORfIq9IKG0Gavg"></script>
+
+</head>
+<body>
+    <header>
+        <h1>Dancoma Checkout</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="checkout-container">
+            <h2>Review Your Order</h2>
+            <div id="checkout-items"></div>
+
+            <div class="checkout-summary">
+                <p>Total: ₦<span id="total-amount">0</span></p>
+            </div>
+        </section>
+
+        <section id="customer-details">
+            <h3>Billing Information</h3>
+            <form id="checkout-form">
+                <label>Full Name:</label>
+                <input type="text" id="customer-name" required>
+
+                <label>Email:</label>
+                <input type="email" id="customer-email" required>
+
+                <label>Shipping Address:</label>
+                <textarea id="customer-address" required></textarea>
+
+                <label>Payment Method:</label>
+                <select id="payment-method" required>
+                    <option value="bank">Bank Transfer</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="cod">Cash on Delivery</option>
+                </select>
+
+                <div id="bank-details" style="display: none;">
+                    <h4>Bank Transfer Instructions:</h4>
+                    <p>Account Name: Dancoma Ltd</p>
+                    <p>Account Number: 1234567890</p>
+                    <p>Bank Name: Access Bank</p>
+                    <p>After payment, send proof of payment to <strong>payments@dancoma.com</strong></p>
+                </div>
+
+                <div id="paypal-button-container" style="display: none;"></div>
+
+                <button type="submit" id="place-order-btn">Place Order</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dancoma. All Rights Reserved.</p>
+    </footer>
+
+    <script src="checkout.js"></script>
+</body>
+</html>
